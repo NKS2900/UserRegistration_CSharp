@@ -9,10 +9,10 @@ namespace UserRegistrationValidation
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome_To_UserRegistration_RegeEx");
-           // FirstNameVal();
+            //FirstNameVal();
             //LastNameVal();
-           // EmailValidation();
-           // MobileValidation();
+            //EmailValidation();
+            //MobileValidation();
             PasswordRule();
         }
         public static void FirstNameVal()
@@ -63,9 +63,9 @@ namespace UserRegistrationValidation
         }
         public static void PasswordRule()
         {
-            string PasswordPattern = "^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$";
+            string PasswordPattern = "^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9].{8,}$";
             Regex rg = new Regex(PasswordPattern);
-            Console.Write("Enter Password : ");
+            Console.Write("Enter Password : ");     
             string password = Console.ReadLine();
             bool validate = rg.IsMatch(password);
             if (validate)
@@ -73,5 +73,6 @@ namespace UserRegistrationValidation
             else
                 Console.WriteLine("Invalid password..");
         }
+        
     }
 }
