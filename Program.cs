@@ -5,14 +5,14 @@ namespace UserRegistrationValidation
 {
     class Program
     {
-        public static string REGEX_PATTERN = "^[A-Z]{1}[a-zA-Z]{2,}";           
+        public static string REGEX_PATTERN = "^[A-Z]{1}[a-zA-Z]{2,}$";           
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome_To_UserRegistration_RegeEx");
-            FirstNameVal();
-            LastNameVal();
-            EmailValidation();
-            MobileValidation();
+           // FirstNameVal();
+            //LastNameVal();
+           // EmailValidation();
+           // MobileValidation();
             PasswordRule();
         }
         public static void FirstNameVal()
@@ -63,7 +63,7 @@ namespace UserRegistrationValidation
         }
         public static void PasswordRule()
         {
-            string PasswordPattern = "^[a-zA-Z0-9]{8,}$";
+            string PasswordPattern = "^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$";
             Regex rg = new Regex(PasswordPattern);
             Console.Write("Enter Password : ");
             string password = Console.ReadLine();
