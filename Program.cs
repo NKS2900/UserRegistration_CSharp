@@ -9,10 +9,10 @@ namespace UserRegistrationValidation
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome_To_UserRegistration_RegeEx");
-            //FirstNameVal();
-            //LastNameVal();
-            //EmailValidation();
-            //MobileValidation();
+            FirstNameVal();
+            LastNameVal();
+            EmailValidation();
+            MobileValidation();
             PasswordRule();
         }
         public static void FirstNameVal()
