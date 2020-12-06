@@ -5,7 +5,7 @@ namespace UserRegistrationValidation
 {
     class Program
     {
-        public static string REGEX_PATTERN = "^[A-Z]{1}[a-zA-Z]{2,}$";           
+        public static string REGEX_PATTERN = "^[A-Z]{1}[a-zA-Z]{2,}$";
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome_To_UserRegistration_RegeEx");
@@ -16,15 +16,12 @@ namespace UserRegistrationValidation
             PasswordRule();
         }
         public static void FirstNameVal()
-        {           
-            Regex rg = new Regex(REGEX_PATTERN);            
-            Console.Write("Enter First Name : ");            
+        {
+            Regex rg = new Regex(REGEX_PATTERN);
+            Console.Write("Enter First Name : ");
             string first_name = Console.ReadLine();
             bool validate = rg.IsMatch(first_name);
-            if (validate)
-                Console.WriteLine("Name is Valid : " + first_name);
-            else
-                Console.WriteLine("Invalid FirstName");           
+            Console.WriteLine(validate);
         }
         public static void LastNameVal()
         {
@@ -32,10 +29,7 @@ namespace UserRegistrationValidation
             Console.Write("Enter Last Name : ");
             string last_name = Console.ReadLine();
             bool validate = rg.IsMatch(last_name);
-            if (validate)
-                Console.WriteLine("Name is Valid : " + last_name);
-            else
-                Console.WriteLine("Invalid LastName");
+            Console.WriteLine(validate);
         }
         public static void EmailValidation()
         {
@@ -44,10 +38,7 @@ namespace UserRegistrationValidation
             Console.Write("Enter E-mail : ");
             string email = Console.ReadLine();
             bool validate = rg.IsMatch(email);
-            if (validate)
-                Console.WriteLine("Email is valid : " + email);
-            else
-                Console.WriteLine("Invalid E-mail.");
+            Console.WriteLine(validate);
         }
         public static void MobileValidation()
         {
@@ -56,23 +47,16 @@ namespace UserRegistrationValidation
             Console.Write("Enter Mobile_NO : ");
             string mobile = Console.ReadLine();
             bool validate = rg.IsMatch(mobile);
-            if (validate)
-                Console.WriteLine("Mobile is valid : " + mobile);
-            else
-                Console.WriteLine("Invalid Mobile..");
+            Console.WriteLine(validate);
         }
         public static void PasswordRule()
         {
-            string PasswordPattern = "^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9].{8,}$";
+            string PasswordPattern = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[~!@#$%^&*.-])[a-zA-Z0-9].{8,}$";
             Regex rg = new Regex(PasswordPattern);
-            Console.Write("Enter Password : ");     
+            Console.Write("Enter Password : ");
             string password = Console.ReadLine();
             bool validate = rg.IsMatch(password);
-            if (validate)
-                Console.WriteLine("Password is valid : " + password);
-            else
-                Console.WriteLine("Invalid password..");
+            Console.WriteLine(validate);
         }
-        
     }
 }
